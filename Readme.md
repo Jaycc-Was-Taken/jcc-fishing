@@ -31,6 +31,7 @@ Features :
 ## Preview :
 - https://www.youtube.com/watch?v=5FLmww5DNt4
 # Thanks :
+- Google for the images.
 - Thanks to Jimathy, he posted his scripts and I learned a lot with how to spawn peds and such in a really nice way, he has a lot of really good stuff at https://github.com/jimathy
 - Thanks to vrp fishing for some animations and prop placement stuff, really cool stuff that really helped. https://github.com/OriginalGamers/vrp_fishing_animations/blob/master/vrp_fishing_animations/client.lua originally found https://forum.cfx.re/t/release-vrp-fishing-animations/109707
 
