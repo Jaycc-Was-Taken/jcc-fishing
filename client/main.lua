@@ -988,7 +988,7 @@ RegisterNetEvent('jcc-fishing:client:sellfish', function(data)
         end
     end, data.fish, 1)
 end)
-RegisterNetEvent('jcc-fishing:client:startFishing' function()
+RegisterNetEvent('jcc-fishing:client:startFishing', function()
     local ped = PlayerPedId()
     local coords = GetEntityCoords(ped)
     local boat = GetClosestVehicle(coords.x, coords.y, coords.z, 5.0, 0, 12294)
