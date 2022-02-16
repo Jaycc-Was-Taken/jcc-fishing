@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports["qb-core"]:GetCoreObject()
 local fishing = false
 local currentArea = 0
 local FailedAttemps = 0
@@ -998,7 +998,6 @@ RegisterNetEvent('jcc-fishing:client:startFishing', function()
                 if not IsPedSwimming(ped) then
                     if checkFishingArea() then
                         if currentArea == 1 or currentArea == 3 or currentArea == 4 then
-                            exports["qb-core"]:DrawText("[E] - Stop Fishing", "left")
                             FreezeEntityPosition(ped, true)
                             SetCurrentPedWeapon(ped, 0xA2719263)
                             Wait(1000)
@@ -1006,7 +1005,6 @@ RegisterNetEvent('jcc-fishing:client:startFishing', function()
                             fishingStart(1)
                             fishing = true 
                         elseif currentArea == 2 then
-                            exports["qb-core"]:DrawText("[E] - Stop Fishing", "left")
                             FreezeEntityPosition(ped, true)
                             SetCurrentPedWeapon(ped, 0xA2719263)
                             Wait(1000)
@@ -1122,9 +1120,11 @@ end
 
 function catchFish(rarity)
     local ped = PlayerPedId()
+    local Skillbar = exports['qb-skillbar']:GetSkillbarObject()
     local duration = math.random(7500,10000)
     local pos = math.random(10,25)
     local width = math.random(10,20)
+    exports["qb-core"]:HideText()
     if (currentArea == 1) or (currentArea == 4) then
         TriggerServerEvent('jcc-fishing:server:TakeBait')          
         if rarity == 2 then
