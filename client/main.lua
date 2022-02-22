@@ -1124,7 +1124,7 @@ function catchFish(rarity)
     local duration = math.random(7500,10000)
     local pos = math.random(10,25)
     local width = math.random(10,20)
-    exports["qb-core"]:HideText()
+  --  exports["qb-core"]:HideText()
     if (currentArea == 1) or (currentArea == 4) then
         TriggerServerEvent('jcc-fishing:server:TakeBait')          
         if rarity == 2 then
@@ -1364,11 +1364,37 @@ Citizen.CreateThread(function()
         Citizen.Wait(sleep)
     end
 end)
+
+local function DrawText3D(x, y, z, text)
+	SetTextScale(0.35, 0.35)
+    SetTextFont(4)
+    SetTextProportional(1)
+    SetTextColour(255, 255, 255, 215)
+    SetTextEntry("STRING")
+    SetTextCentre(true)
+    AddTextComponentString(text)
+    SetDrawOrigin(x,y,z, 0)
+    DrawText(0.0, 0.0)
+    local factor = (string.len(text)) / 370
+    DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 75)
+    ClearDrawOrigin()
+end
+
+Citizen.CreateThread(function()
+    while true do
+        Wait(3)
+        if fishing then
+            local pcoords = GetEntityCoords(PlayerPedId())
+            DrawText3D(pcoords.x, pcoords.y, pcoords.z, "~g~[E]~w~ - Stop Fishing") 
+        end
+    end
+end)
+
 function fishingStart(area)
     if area ~= 2 then 
         QBCore.Functions.TriggerCallback('QBCore:HasItem', function(hasItem)
             if hasItem then
-                exports["qb-core"]:DrawText("[E] - Stop Fishing", "left")
+             --   exports["qb-core"]:DrawText("[E] - Stop Fishing", "left")
                 LoadPropDict('prop_fishing_rod_01')
                 rod = AttachEntityToPed('prop_fishing_rod_01',60309, 0,0,0, 0,0,0)
                 fising = true
@@ -1388,7 +1414,7 @@ function fishingStart(area)
     else
         QBCore.Functions.TriggerCallback('QBCore:HasItem', function(hasItem)
             if hasItem then
-                exports["qb-core"]:DrawText("[E] - Stop Fishing", "left")
+           --     exports["qb-core"]:DrawText("[E] - Stop Fishing", "left")
                 LoadPropDict('prop_fishing_rod_01')
                 rod = AttachEntityToPed('prop_fishing_rod_01',60309, 0,0,0, 0,0,0)
                 fishing = true        
