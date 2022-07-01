@@ -1,4 +1,4 @@
-# WIP
+# I NO LONGER SUPPORT/UPDATE THIS
 
 ## A Fishing Script for QBCore Framework
 Features :
@@ -6,22 +6,6 @@ Features :
 - Large variety of fish.
 - Different fish for freshwater and saltwater areas.
 - Fishing off of boats, docks, or land.
-
-
-## Issues :
-- I'd like to figure out a way to check if the water is a specific depth rather than if the player is swimming to not allow them to be in too deep of water.
-
-## Currently Working On :
-- Really need to smooth out animations.
-- Still need to make some rotating spots for the "illegal" saltwater fish. 
-- Still mapping out all of the docks and proper fishing areas with polyzones, just takes time. 
-- Would like to add in a hotspot mechanic, where at server startup a random freshwater, and saltwater "hotspot" are chosen where you get increased chance for the rarer fish.
-- Would like to build a charter system where players can rent a boat and get given a large circle blip over the hotspot (freshwater or saltwater depending on which charter they use).
-- With the charter boats I'd like to add in a "livewell" inventory type to the inventory that can only hold fish so that players can have extended fishing trips with a large group on one boat.
-- Figure out some different bait options, currently only one bait for everything.
-
-### Possibly Doing :
-- Depending on player feedback I might make it just a "sell all" for the fish rather than 1 type at a time.
 
 ## Dependencies :
 - QB Framework
